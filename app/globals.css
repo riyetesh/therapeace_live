@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+:root { background:#FAF8F5; color:#2C3E50; }
+html { scroll-behavior:smooth; }
+body { margin:0; overflow-x:hidden; background:#FAF8F5; }
+* { box-sizing:border-box; }
+a { text-decoration:none; }

@@ -1,0 +1,2 @@
+import Maintenance from "@/components/Maintenance";
+export default function Profile(){return <main className="mx-auto max-w-4xl px-6 py-16"><h1 className="text-4xl font-bold">Your profile</h1><p className="mt-3 mb-10 text-[#5D737E]">Manage your personal information and preferences.</p><Maintenance title="Profile management is currently on maintenance"/></main>}

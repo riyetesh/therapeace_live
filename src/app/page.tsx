@@ -1,0 +1,13 @@
+"use client";
+import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { ArrowLeft, Eye, EyeOff, Heart } from "lucide-react";
+import { USER_KEY, NAME_KEY } from "@/lib/auth";
+
+export default function Login() {
+  const router=useRouter(); const params=useSearchParams(); const next=params.get("next") || "/dashboard";
+  const [email,setEmail]=useState(""); const [password,setPassword]=useState(""); const [show,setShow]=useState(false); const [error,setError]=useState("");
+  function submit(e:FormEvent){e.preventDefault();if(!email||!password){setError("Enter your email and password.");return}localStorage.setItem(USER_KEY,email);localStorage.setItem(NAME_KEY,email.split("@")[0]);window.dispatchEvent(new Event("therapeace-auth"));router.push(next);}
+  return <main className="container-shell grid min-h-[calc(100vh-72px)] place-items-center py-16"><div className="w-full max-w-md"><Link href="/" className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[#65767b]"><ArrowLeft size={15}/> Back home</Link><form onSubmit={submit} className="rounded-[34px] bg-white p-7 card-shadow sm:p-9"><div className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#20373b] text-white"><Heart size={18} fill="currentColor"/></div><h1 className="mt-7 text-3xl font-semibold tracking-tight">Welcome back.</h1><p className="mt-2 text-sm leading-6 text-[#738286]">Sign in to manage your support space and bookings.</p><label className="mt-8 block text-sm font-semibold">Email<input value={email} onChange={e=>setEmail(e.target.value)} type="email" required className="mt-2 w-full rounded-2xl bg-[#f4f6f3] p-3.5 outline-none focus:ring-2 focus:ring-[#a6cfcd]" placeholder="you@example.com"/></label><label className="mt-5 block text-sm font-semibold">Password<div className="relative mt-2"><input value={password} onChange={e=>setPassword(e.target.value)} type={show?"text":"password"} required className="w-full rounded-2xl bg-[#f4f6f3] p-3.5 pr-12 outline-none focus:ring-2 focus:ring-[#a6cfcd]" placeholder="••••••••"/><button type="button" onClick={()=>setShow(v=>!v)} className="absolute right-4 top-1/2 -translate-y-1/2 text-[#78878a]">{show?<EyeOff size={17}/>:<Eye size={17}/>}</button></div></label>{error&&<p className="mt-4 text-sm text-red-600">{error}</p>}<button className="mt-7 w-full rounded-2xl bg-[#20373b] py-3.5 font-bold text-white">Log in</button><p className="mt-6 text-center text-sm text-[#7a898c]">New here? <Link href={`/signup?next=${encodeURIComponent(next)}`} className="font-bold text-[#20373b]">Create an account</Link></p></form></div></main>;
+}
