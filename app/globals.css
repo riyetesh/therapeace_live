@@ -1,10 +1,28 @@
 @import "tailwindcss";
 
-:root { background:#FAF8F5; color:#2C3E50; }
-html { scroll-behavior:smooth; }
-body { margin:0; overflow-x:hidden; background:#FAF8F5; }
-* { box-sizing:border-box; }
-a { text-decoration:none; }
+:root {
+  background: #f8f7f3;
+  color: #243746;
+  --ink: #243746;
+  --muted: #64747b;
+  --teal: #238f96;
+  --paper: #f8f7f3;
+  --line: #e4e4de;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+a { text-decoration: none; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+::selection { background: #c8e6e3; color: var(--ink); }
 
 :focus-visible {
   outline: 3px solid #2CA5AD;

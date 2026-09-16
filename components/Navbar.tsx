@@ -50,13 +50,8 @@ export default function Navbar() {
       <div className="border-b border-[#D9C9A8] bg-[#FFF7E5]">
         <div className="mx-auto flex min-h-10 max-w-7xl items-center justify-center px-4 py-2 text-center text-xs font-medium leading-5 text-[#675A42] md:px-10">
           <p>
-            <span className="font-bold text-[#4F4635]">
-              We&apos;re giving Therapeace a little glow-up.
-            </span>{" "}
-            The platform is currently being redesigned, so bookings and
-            appointments are on pause for now. We&apos;re working behind the
-            scenes to make the next version feel even better. Thanks for being
-            here, see you soon.
+            <span className="font-bold text-[#4F4635]">A quieter, better way to find support.</span>{" "}
+            Therapeace is currently in a private redesign. Bookings will reopen soon.
           </p>
         </div>
       </div>
