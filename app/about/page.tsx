@@ -63,7 +63,7 @@ export default function About() {
 
             <p className="mt-5 text-lg leading-8 text-[#607481]">
               Therapeace is designed to help people discover therapists based
-              on the things that matter to them — including language, cultural
+              on the things that matter to them, including language, cultural
               background, specialty, reviews, pricing and availability.
             </p>
           </div>

@@ -138,7 +138,7 @@ export default function Bookings() {
               size={15}
               className="fill-[#2CA5AD] text-[#2CA5AD]"
             />
-            Therapeace — mental wellness without the cultural distance.
+            Therapeace, mental wellness without the cultural distance.
           </div>
 
           <Link
