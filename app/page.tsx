@@ -43,7 +43,7 @@ export default function Home() {
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#607481] md:text-xl">
               Therapeace connects people living abroad with therapists from
-              their own cultural and linguistic background — making mental
+              their own cultural and linguistic background, making mental
               wellness support feel a little closer to home.
             </p>
 
