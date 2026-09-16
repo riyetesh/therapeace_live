@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowDown,
@@ -17,27 +18,26 @@ import TherapistCard from "@/components/TherapistCard";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-[#FCFAF7] text-[#2C3E50]">
+    <main className="overflow-hidden bg-[#F8F7F3] text-[#243746]">
       {/* HERO */}
       <section className="relative min-h-[720px] overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#DDF3F4] opacity-70 blur-3xl" />
-        <div className="absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-[#F9E5D8] opacity-70 blur-3xl" />
+        <div className="absolute left-0 top-0 h-px w-24 bg-[#2CA5AD] md:w-40" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-[1.05fr_.95fr] md:px-10 md:py-28">
           {/* LEFT */}
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#7FB8C9]/30 bg-white/70 px-4 py-2 text-sm font-semibold text-[#54707B] shadow-sm backdrop-blur">
               <Sparkles size={15} className="text-[#2CA5AD]" />
-              Culturally aligned mental wellness
+              Mental wellness, with context
             </div>
 
             <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[0.98] tracking-[-0.045em] md:text-7xl">
-              Find someone who{" "}
+              Find support that feels{" "}
               <span className="relative inline-block text-[#2CA5AD]">
-                understands
+                familiar
                 <span className="absolute -bottom-1 left-0 h-2 w-full -rotate-2 rounded-full bg-[#F4D998]" />
               </span>{" "}
-              where you come from.
+              wherever you are.
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#607481] md:text-xl">
@@ -100,9 +100,11 @@ export default function Home() {
             </div>
 
             <div className="relative overflow-hidden rounded-[3.5rem] rounded-bl-[9rem] rounded-tr-[9rem] bg-[#D9EFF0] p-3 shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=90"
                 alt="Friends talking together"
+                width={1200}
+                height={800}
                 className="h-[520px] w-full rounded-[3rem] rounded-bl-[8rem] rounded-tr-[8rem] object-cover"
               />
 

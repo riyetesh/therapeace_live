@@ -1,54 +1,8 @@
 "use client";
 
-import { ArrowDown, ArrowRight, Heart, Sparkles, Users } from "lucide-react";
-
-const team = [
-  {
-    name: "Pooja Pantha",
-    role: "Technical & Development",
-    number: "01",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=85",
-    description:
-      "Turned the idea into something we could actually build, coordinating the technical and development work behind the platform.",
-  },
-  {
-    name: "Manish Sharma",
-    role: "Research & Development",
-    number: "02",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=85",
-    description:
-      "Helped us understand the problem more deeply through research and shaped our thinking around what culturally relevant support could look like.",
-  },
-  {
-    name: "Ritesh Yadav",
-    role: "Co-Founder & CTO",
-    number: "03",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85",
-    description:
-      "Worked across analysis, web development, research and deployment, helping move the idea from conversations into a working product.",
-  },
-  {
-    name: "Srijit Bashyal",
-    role: "Therapist Relations",
-    number: "04",
-    image:
-      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=600&q=85",
-    description:
-      "Focused on the people at the heart of the platform, reaching out to therapists and exploring how a trusted therapist network could be built.",
-  },
-  {
-    name: "Krishma Kunwar",
-    role: "Marketing",
-    number: "05",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=600&q=85",
-    description:
-      "Focused on how the idea could reach Nepali communities abroad and helped us think about the people we were ultimately building for.",
-  },
-];
+import Link from "next/link";
+import { ArrowDown, ArrowRight, Heart, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function OurStory() {
   return (
@@ -114,9 +68,11 @@ export default function OurStory() {
             </div>
 
             <div className="relative overflow-hidden rounded-[3rem] rounded-bl-[8rem] rounded-tr-[8rem] bg-[#D9EFF0] p-3 shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=90"
                 alt="Friends spending time together"
+                width={1200}
+                height={800}
                 className="h-[500px] w-full rounded-[2.5rem] rounded-bl-[7rem] rounded-tr-[7rem] object-cover"
               />
             </div>
@@ -197,9 +153,11 @@ export default function OurStory() {
               </div>
 
               <div className="absolute -bottom-10 -right-5 hidden w-52 rotate-3 overflow-hidden rounded-3xl border-8 border-white shadow-xl md:block">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=85"
                   alt="Mountain landscape"
+                  width={500}
+                  height={640}
                   className="h-64 w-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/30 p-3 text-center text-sm font-bold text-white">
@@ -283,8 +241,7 @@ export default function OurStory() {
       </section>
 
       {/* TEAM */}
-      {/* TEAM */}
-<section id="team" className="bg-[#EAF7F7] py-28">
+      <section id="team" className="bg-[#EAF7F7] py-28">
   <div className="mx-auto max-w-7xl px-6 md:px-10">
     <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
       <div>
@@ -364,20 +321,22 @@ export default function OurStory() {
               closer to home.
             </p>
 
-            <a
+            <Link
               href="/therapists"
               className="mt-9 inline-flex items-center gap-2 rounded-full bg-[#2CA5AD] px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 hover:shadow-xl"
             >
               Explore Therapeace
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
 
           <div className="relative">
             <div className="overflow-hidden rounded-[3rem] rounded-bl-[8rem] rounded-tr-[8rem] border-[10px] border-white shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=90"
                 alt="Person looking toward a mountain landscape"
+                width={1000}
+                height={700}
                 className="h-[500px] w-full object-cover"
               />
             </div>
