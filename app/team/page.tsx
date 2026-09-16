@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Heart, Linkedin, Sparkles } from "lucide-react";
 
@@ -96,9 +97,11 @@ export default function Team() {
             >
               {/* PHOTO */}
               <div className="relative h-64 overflow-hidden bg-[#EAF7F7]">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={600}
+                  height={800}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
 

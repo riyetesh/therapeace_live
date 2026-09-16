@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowDown,
@@ -100,9 +101,11 @@ export default function Home() {
             </div>
 
             <div className="relative overflow-hidden rounded-[3.5rem] rounded-bl-[9rem] rounded-tr-[9rem] bg-[#D9EFF0] p-3 shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=90"
                 alt="Friends talking together"
+                width={1200}
+                height={800}
                 className="h-[520px] w-full rounded-[3rem] rounded-bl-[8rem] rounded-tr-[8rem] object-cover"
               />
 
