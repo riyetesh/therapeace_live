@@ -43,7 +43,7 @@ export default function Home() {
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#607481] md:text-xl">
               Therapeace connects people living abroad with therapists from
-              their own cultural and linguistic background — making mental
+              their own cultural and linguistic background, making mental
               wellness support feel a little closer to home.
             </p>
 
@@ -285,7 +285,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#607481]">
-                Moving abroad can change almost everything around you — your
+                Moving abroad can change almost everything around you, including your
                 language, routines, relationships and environment. Your need
                 to feel understood doesn&apos;t have to change with it.
               </p>

@@ -98,7 +98,7 @@ export default function ForgotPassword() {
               className="fill-[#2CA5AD] text-[#2CA5AD]"
             />
             <span>
-              Therapeace — mental wellness without the cultural distance.
+              Therapeace, mental wellness without the cultural distance.
             </span>
           </div>
         </div>

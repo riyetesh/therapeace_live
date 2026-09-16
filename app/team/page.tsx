@@ -63,7 +63,7 @@ export default function Team() {
 
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-[#607481] md:text-xl">
               We believe mental wellness support should understand the person
-              behind the problem — including their culture, language and
+              behind the problem, including their culture, language and
               experiences.
             </p>
           </div>
