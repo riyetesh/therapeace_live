@@ -57,7 +57,7 @@ export default function Navbar() {
       </div>
 
       {/* NAVBAR */}
-      <header className={`sticky top-0 z-50 border-b border-stone-200/70 bg-[#FCFAF7]/90 backdrop-blur-xl transition-shadow ${scrolled ? "shadow-[0_8px_30px_rgba(44,62,80,0.08)]" : ""}`}>
+      <header className={`sticky top-0 z-50 border-b border-stone-200/70 bg-[#FCFAF7]/90 backdrop-blur-xl transition-[box-shadow,background-color] duration-500 ${scrolled ? "shadow-[0_8px_30px_rgba(44,62,80,0.08)]" : ""}`}>
         <nav aria-label="Primary navigation" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
           {/* LOGO */}
           <Link

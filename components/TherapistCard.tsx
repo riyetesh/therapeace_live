@@ -15,7 +15,7 @@ export type Therapist = {
 export default function TherapistCard({ t, currency = "EUR" }: { t: Therapist; currency?: Currency }) {
   const [saved, setSaved] = useState(false);
   return (
-    <article className="group overflow-hidden rounded-[2rem] border border-stone-200/80 bg-white shadow-[0_8px_30px_rgba(44,62,80,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-[#B8DDDF] hover:shadow-[0_20px_50px_rgba(44,62,80,0.12)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <article className="motion-rise group overflow-hidden rounded-[2rem] border border-stone-200/80 bg-white shadow-[0_8px_30px_rgba(44,62,80,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-[#B8DDDF] hover:shadow-[0_20px_50px_rgba(44,62,80,0.12)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
       <div className="relative h-[280px] overflow-hidden bg-[#EAF7F7]">
         <Image src={t.image} alt={`${t.name}, ${t.title}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center transition duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#172B38]/50 via-transparent to-[#172B38]/5" />
