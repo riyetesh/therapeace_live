@@ -82,8 +82,8 @@ export default function Home() {
           </div>
 
           {/* RIGHT */}
-          <div className="motion-rise motion-rise-delay-2 relative mx-auto w-full max-w-xl">
-            <div className="absolute -right-5 top-4 z-20 rounded-2xl bg-white px-5 py-4 shadow-xl">
+          <div className="motion-scale motion-scale-delay-2 relative mx-auto w-full max-w-xl">
+            <div className="motion-rise motion-rise-delay-3 absolute -right-5 top-4 z-20 rounded-2xl bg-white px-5 py-4 shadow-xl">
               <div className="flex items-center gap-2">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E7F7F6]">
                   <Heart
