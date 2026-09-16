@@ -1,16 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  background: #f8f7f3;
-  color: #243746;
-  --ink: #243746;
-  --muted: #64747b;
-  --teal: #238f96;
-  --paper: #f8f7f3;
-  --line: #e4e4de;
+  background: #faf8f4;
+  color: #263a3d;
+  --ink: #263a3d;
+  --muted: #687477;
+  --eucalyptus: #6f9b8b;
+  --terracotta: #c9826b;
+  --sage: #dce8df;
+  --sand: #ede3d5;
+  --paper: #faf8f4;
+  --line: #e2e4df;
+  --teal: #6f9b8b;
 }
 
 html { scroll-behavior: smooth; }
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes soft-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes shimmer-line {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(300%); }
+}
+
+@keyframes soft-scale-in {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(76, 183, 165, .24); }
+  50% { box-shadow: 0 0 0 6px rgba(76, 183, 165, 0); }
+}
+
+.motion-rise { animation: rise-in 700ms cubic-bezier(.22,1,.36,1) both; }
+.motion-rise-delay-1 { animation-delay: 100ms; }
+.motion-rise-delay-2 { animation-delay: 180ms; }
+.motion-rise-delay-3 { animation-delay: 260ms; }
+.motion-float { animation: soft-float 5s ease-in-out infinite; }
+.motion-scale { animation: soft-scale-in 800ms cubic-bezier(.22,1,.36,1) both; }
+.motion-scale-delay-2 { animation-delay: 180ms; }
+.motion-pulse { animation: pulse-soft 2.8s ease-in-out infinite; }
+
+.reveal-on-load { opacity: 0; animation: rise-in 800ms cubic-bezier(.22,1,.36,1) forwards; }
+.reveal-on-load:nth-child(2) { animation-delay: 90ms; }
+.reveal-on-load:nth-child(3) { animation-delay: 180ms; }
+.reveal-on-load:nth-child(4) { animation-delay: 270ms; }
+
+.interactive-arrow { transition: transform 280ms cubic-bezier(.22,1,.36,1); }
+.group:hover .interactive-arrow, .group:focus-visible .interactive-arrow { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-load, .motion-rise, .motion-scale, .motion-float, .motion-pulse { animation: none; opacity: 1; }
+  .interactive-arrow { transition: none; }
+}
+
 body {
   margin: 0;
   overflow-x: hidden;

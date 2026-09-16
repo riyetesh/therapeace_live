@@ -26,6 +26,7 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-[1.05fr_.95fr] md:px-10 md:py-28">
           {/* LEFT */}
           <div className="relative z-10">
+            <div className="motion-rise">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#7FB8C9]/30 bg-white/70 px-4 py-2 text-sm font-semibold text-[#54707B] shadow-sm backdrop-blur">
               <Sparkles size={15} className="text-[#2CA5AD]" />
               Mental wellness, with context
@@ -77,11 +78,12 @@ export default function Home() {
                 Language-aware support
               </div>
             </div>
+            </div>
           </div>
 
           {/* RIGHT */}
-          <div className="relative mx-auto w-full max-w-xl">
-            <div className="absolute -right-5 top-4 z-20 rounded-2xl bg-white px-5 py-4 shadow-xl">
+          <div className="motion-scale motion-scale-delay-2 relative mx-auto w-full max-w-xl">
+            <div className="motion-rise motion-rise-delay-3 absolute -right-5 top-4 z-20 rounded-2xl bg-white px-5 py-4 shadow-xl">
               <div className="flex items-center gap-2">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E7F7F6]">
                   <Heart
@@ -127,7 +129,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="absolute -bottom-3 right-8 flex h-16 w-16 rotate-6 items-center justify-center rounded-2xl bg-white shadow-lg">
+            <div className="motion-float absolute -bottom-3 right-8 flex h-16 w-16 rotate-6 items-center justify-center rounded-2xl bg-white shadow-lg">
               <Heart
                 size={28}
                 className="fill-[#F0B7AD] text-[#E29A90]"
@@ -192,7 +194,7 @@ export default function Home() {
               return (
                 <div
                   key={step.number}
-                  className="group relative overflow-hidden rounded-[2rem] border border-stone-200 bg-[#FCFAF7] p-8 transition duration-500 hover:-translate-y-2 hover:border-[#9ACDD1] hover:shadow-xl"
+                  className="motion-rise motion-rise-delay-1 group relative overflow-hidden rounded-[2rem] border border-stone-200 bg-[#FCFAF7] p-8 transition duration-500 hover:-translate-y-2 hover:border-[#9ACDD1] hover:shadow-xl"
                 >
                   <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#E8F6F6] transition duration-500 group-hover:scale-150" />
 
