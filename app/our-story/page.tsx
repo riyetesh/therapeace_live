@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowDown, ArrowRight, Heart, Sparkles, Users } from "lucide-react";
 
 const team = [
@@ -364,13 +365,13 @@ export default function OurStory() {
               closer to home.
             </p>
 
-            <a
+            <Link
               href="/therapists"
               className="mt-9 inline-flex items-center gap-2 rounded-full bg-[#2CA5AD] px-7 py-3.5 font-bold text-white transition hover:-translate-y-1 hover:shadow-xl"
             >
               Explore Therapeace
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
 
           <div className="relative">
