@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Heart } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "/therapists", label: "Find a Therapist" },
@@ -17,9 +17,35 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       {/* SITE STATUS NOTICE */}
       <div className="border-b border-[#D9C9A8] bg-[#FFF7E5]">
         <div className="mx-auto flex min-h-10 max-w-7xl items-center justify-center px-4 py-2 text-center text-xs font-medium leading-5 text-[#675A42] md:px-10">
@@ -36,8 +62,8 @@ export default function Navbar() {
       </div>
 
       {/* NAVBAR */}
-      <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-[#FCFAF7]/90 backdrop-blur-xl">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
+      <header className={`sticky top-0 z-50 border-b border-stone-200/70 bg-[#FCFAF7]/90 backdrop-blur-xl transition-shadow ${scrolled ? "shadow-[0_8px_30px_rgba(44,62,80,0.08)]" : ""}`}>
+        <nav aria-label="Primary navigation" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
           {/* LOGO */}
           <Link
             href="/"
@@ -100,7 +126,9 @@ export default function Navbar() {
           <button
             type="button"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMobileOpen((open) => !open)}
             className="flex h-11 w-11 items-center justify-center rounded-xl border border-stone-200 bg-white text-[#2C3E50] transition hover:bg-[#EAF7F7] md:hidden"
           >
             {mobileOpen ? <X size={21} /> : <Menu size={21} />}
@@ -109,7 +137,7 @@ export default function Navbar() {
 
         {/* MOBILE MENU */}
         {mobileOpen && (
-          <div className="border-t border-stone-200 bg-[#FCFAF7] md:hidden">
+          <div id="mobile-navigation" aria-label="Mobile navigation" className="border-t border-stone-200 bg-[#FCFAF7] md:hidden">
             <div className="mx-auto max-w-7xl px-6 py-5">
               <div className="flex flex-col gap-1">
                 {links.map((link) => {
